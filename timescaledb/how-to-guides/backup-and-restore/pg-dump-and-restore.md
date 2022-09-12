@@ -29,6 +29,7 @@ example, to backup a database named `tsdb`:
 ```bash
 pg_dump -Fc -f tsdb.bak tsdb
 ```
+
 To backup a database named `tsdb` hosted on a remote server:
 
 ```bash
@@ -77,6 +78,12 @@ database and restore the data.
 
     ```sql
     SELECT timescaledb_post_restore();
+    ```
+
+1.  **OPTIONAL** Reindex your database to improve query performance:
+
+    ```sql
+    REINDEX DATABASE tsdb;
     ```
 
 </procedure>
@@ -162,7 +169,7 @@ partitions, or the chunk interval sizes.
 [parallel importer]: https://github.com/timescale/timescaledb-parallel-copy
 [pg_dump]: https://www.postgresql.org/docs/current/static/app-pgdump.html
 [pg_restore]: https://www.postgresql.org/docs/current/static/app-pgrestore.html
-[timescaledb_post_restore]: /api/:currentVersion:/administration/timescaledb_post_restore/
 [timescaledb_pre_restore]: /api/:currentVersion:/administration/timescaledb_pre_restore/
+[timescaledb_post_restore]: /api/:currentVersion:/administration/timescaledb_post_restore/
 [timescaledb-upgrade]: /timescaledb/:currentVersion:/how-to-guides/upgrades/
 [troubleshooting]: /timescaledb/:currentVersion:/how-to-guides/backup-and-restore/troubleshooting/
