@@ -9,7 +9,8 @@ tags: [recovery, logical backup, pg_dump, pg_restore]
 
 You can backup and restore an entire database or individual hypertables using
 the native PostgreSQL [`pg_dump`][pg_dump] and [`pg_restore`][pg_restore]
-commands.
+commands. This works even for compressed hypertables, without having to
+decompress the chunks before you begin.
 
 Upgrades between different versions of TimescaleDB can be done in place; you
 don't need to backup and restore your data. See
